@@ -46,8 +46,6 @@ class DatabaseHelper {
   deleteAllData() async {
     Database db = await DatabaseHelper.instance.database;
     db.delete(tableName);
-    db.execute(
-        "UPDATE SQLITE_SEQUENCE SET SEQ= '$_columnId' WHERE NAME='$tableName'");
   }
 
   updateData(int? id, String text, String title) async {
